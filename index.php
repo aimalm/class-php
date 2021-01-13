@@ -42,11 +42,6 @@ $products = [
     $product6 = new product('Iphone 11 plus', 1400)
 
 ];
-echo "<pre>";
-
-var_dump($products);
-echo "</pre>";
-
 
 $totalValue = 0;
 $productsArray = [];
