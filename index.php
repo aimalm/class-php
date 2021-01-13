@@ -5,32 +5,48 @@
 
 // This line makes PHP behave in a more strict way
 declare(strict_types=1);
+require './products.php';
 
 // We are going to use session variables so we need to enable sessions
 //session_start();
 
 // Use this function when you need to need an overview of these variables
-function whatIsHappening()
-{
-    echo '<h2>$_GET</h2>';
-    var_dump($_GET);
-    echo '<h2>$_POST</h2>';
-    var_dump($_POST);
-    echo '<h2>$_COOKIE</h2>';
-    var_dump($_COOKIE);
-    echo '<h2>$_SESSION</h2>';
-    var_dump($_SESSION);
-}
+// function whatIsHappening()
+// {
+//     echo '<h2>$_GET</h2>';
+//     var_dump($_GET);
+//     echo '<h2>$_POST</h2>';
+//     var_dump($_POST);
+//     echo '<h2>$_COOKIE</h2>';
+//     var_dump($_COOKIE);
+//     echo '<h2>$_SESSION</h2>';
+//     var_dump($_SESSION);
+// }
 
 // TODO: provide some products (you may overwrite the example)
+// $products = [
+//     ['name' => 'Iphone 7', 'price' => 750],
+//     ['name' => 'Iphone 8', 'price' => 800],
+//     ['name' => 'Iphone 9', 'price' => 900],
+//     ['name' => 'Iphone 10', 'price' => 1100],
+//     ['name' => 'Iphone 11', 'price' => 1200],
+//     ['name' => 'Iphone 11 plus', 'price' => 1400],
+// ];
+
 $products = [
-    ['name' => 'Iphone 7', 'price' => 750],
-    ['name' => 'Iphone 8', 'price' => 800],
-    ['name' => 'Iphone 9', 'price' => 900],
-    ['name' => 'Iphone 10', 'price' => 1100],
-    ['name' => 'Iphone 11', 'price' => 1200],
-    ['name' => 'Iphone 11 plus', 'price' => 1400],
+    $product1 = new product('Iphone 7', 750),
+    $product2 = new product('Iphone 8', 800),
+    $product3 = new product('Iphone 9', 900),
+    $product4 = new product('Iphone 10', 1100),
+    $product5 = new product('Iphone 11', 1200),
+    $product6 = new product('Iphone 11 plus', 1400)
+
 ];
+echo "<pre>";
+
+var_dump($products);
+echo "</pre>";
+
 
 $totalValue = 0;
 $productsArray = [];
@@ -56,8 +72,8 @@ if (isset($_POST['order'])) {
         // $quantitySelected = array_keys($_POST['quantity']);
 
         foreach ($productsSelected as $item) {
-            array_push($productsArray, $products[$item]['name']);
-            array_push($productPrices, $products[$item]['price']);
+            array_push($productsArray, $products[$item]->name);
+            array_push($productPrices, $products[$item]->price);
         }
         // foreach($quantitySelected as $item){
         //     array_push($quantity, $products[$item]['name']);
