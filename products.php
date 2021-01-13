@@ -15,7 +15,7 @@ class product {
     return $this->name;
   }
   function get_price() {
-    return $this->price;
+    return number_format($this->price, 2);
   }
 }
 ?>

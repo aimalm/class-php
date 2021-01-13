@@ -77,7 +77,7 @@
                 <label>
 					<?php // <?p= is equal to <?php echo ?>
                     <input type="checkbox" value="1" name="products[<?php echo $i ?>]"/> <?php echo $product -> get_name(); ?> -
-                    &euro; <?= number_format($product -> get_price(), 2) ?> </label><br />
+                    &euro; <?= $product -> get_price(); ?> </label><br />
             <?php endforeach; ?>
         </fieldset>
         <button type="submit" class="btn btn-primary" name="order">Order!</button>
